@@ -1,0 +1,10 @@
+{
+  "days": 14,
+  "shifts_per_day": 3,
+  "shift_types": ["morning", "afternoon", "night"],
+  "demand": {
+    "morning": 1,
+    "afternoon": 1,
+    "night": 1
+  }
+}

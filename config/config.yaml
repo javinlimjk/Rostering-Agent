@@ -1,0 +1,49 @@
+countries:
+  US:
+    name: "United States"
+    max_hours_per_week: 40
+    max_consecutive_days: 6
+    min_rest_hours: 11
+    overtime_threshold: 40
+  UK:
+    name: "United Kingdom"
+    max_hours_per_week: 48
+    max_consecutive_days: 6
+    min_rest_hours: 11
+    overtime_threshold: 48
+  SG:
+    name: "Singapore"
+    max_hours_per_week: 44
+    max_consecutive_days: 7
+    min_rest_hours: 12
+    overtime_threshold: 44
+  DE:
+    name: "Germany"
+    max_hours_per_week: 48
+    max_consecutive_days: 6
+    min_rest_hours: 11
+    overtime_threshold: 48
+  JP:
+    name: "Japan"
+    max_hours_per_week: 40
+    max_consecutive_days: 6
+    min_rest_hours: 8
+    overtime_threshold: 40
+
+shifts:
+  morning:
+    start_hour: 6
+    duration_hours: 8
+  afternoon:
+    start_hour: 14
+    duration_hours: 8
+  night:
+    start_hour: 22
+    duration_hours: 8
+
+optimization:
+  solver_time_limit_seconds: 300
+  num_workers: 5
+  num_days: 14
+  min_shifts_per_worker: 5
+  max_shifts_per_worker: 10
