@@ -40,7 +40,7 @@ class OptimizationRequest(BaseModel):
     num_days: int = Field(default=14, ge=1, le=365)
     shift_requirements: Dict[str, int] = Field(
         description="Daily demand for each shift type",
-        example={"morning": 2, "afternoon": 2, "night": 1}
+        json_schema_extra={"example": {"morning": 2, "afternoon": 2, "night": 1}}
     )
     track_experiment: bool = Field(default=True)
     run_name: Optional[str] = None
@@ -108,7 +108,7 @@ async def optimize_schedule(request: OptimizationRequest):
     """
     try:
         # Convert workers to dict format
-        workers = [w.dict() for w in request.workers]
+        workers = [w.model_dump() for w in request.workers]
         
         # Run optimization
         result = optimizer.optimize_schedule(
@@ -150,7 +150,7 @@ async def validate_schedule(request: ValidationRequest):
     """
     try:
         # Convert workers to dict format
-        workers = [w.dict() for w in request.workers]
+        workers = [w.model_dump() for w in request.workers]
         
         # Validate with optimizer
         validation_result = optimizer.validate_schedule(

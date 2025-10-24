@@ -45,5 +45,5 @@ optimization:
   solver_time_limit_seconds: 300
   num_workers: 5
   num_days: 14
-  min_shifts_per_worker: 8
+  min_shifts_per_worker: 5
   max_shifts_per_worker: 10

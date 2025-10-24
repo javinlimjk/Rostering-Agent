@@ -2,9 +2,15 @@
 MLflow experiment tracking for optimization runs.
 """
 from typing import Dict, Any, Optional
-import mlflow
 import os
 from datetime import datetime
+
+try:
+    import mlflow
+    MLFLOW_AVAILABLE = True
+except ImportError:
+    MLFLOW_AVAILABLE = False
+    mlflow = None
 
 
 class ExperimentTracker:
@@ -16,6 +22,11 @@ class ExperimentTracker:
         experiment_name: str = "rostering_optimization"
     ):
         """Initialize MLflow tracking."""
+        if not MLFLOW_AVAILABLE:
+            print("Warning: MLflow not installed. Experiment tracking disabled.")
+            self.experiment_id = None
+            return
+            
         self.tracking_uri = tracking_uri or os.getenv('MLFLOW_TRACKING_URI', 'http://localhost:5000')
         self.experiment_name = experiment_name
         
@@ -35,6 +46,9 @@ class ExperimentTracker:
     
     def start_run(self, run_name: Optional[str] = None) -> str:
         """Start a new MLflow run."""
+        if not MLFLOW_AVAILABLE or self.experiment_id is None:
+            return "no_tracking"
+            
         if run_name is None:
             run_name = f"run_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
         
@@ -47,6 +61,8 @@ class ExperimentTracker:
     
     def log_parameters(self, params: Dict[str, Any]):
         """Log parameters to MLflow."""
+        if not MLFLOW_AVAILABLE:
+            return
         try:
             for key, value in params.items():
                 mlflow.log_param(key, value)
@@ -55,6 +71,8 @@ class ExperimentTracker:
     
     def log_metrics(self, metrics: Dict[str, float]):
         """Log metrics to MLflow."""
+        if not MLFLOW_AVAILABLE:
+            return
         try:
             for key, value in metrics.items():
                 mlflow.log_metric(key, value)
@@ -63,6 +81,8 @@ class ExperimentTracker:
     
     def log_artifact(self, artifact_path: str):
         """Log an artifact file to MLflow."""
+        if not MLFLOW_AVAILABLE:
+            return
         try:
             mlflow.log_artifact(artifact_path)
         except Exception as e:
@@ -70,6 +90,8 @@ class ExperimentTracker:
     
     def log_schedule(self, schedule: Dict[str, Any]):
         """Log optimization schedule as artifact."""
+        if not MLFLOW_AVAILABLE:
+            return
         try:
             import json
             import tempfile
@@ -87,6 +109,8 @@ class ExperimentTracker:
     
     def end_run(self):
         """End the current MLflow run."""
+        if not MLFLOW_AVAILABLE:
+            return
         try:
             mlflow.end_run()
         except Exception as e:
@@ -106,6 +130,9 @@ class ExperimentTracker:
             result: Optimization results
             run_name: Optional run name
         """
+        if not MLFLOW_AVAILABLE or self.experiment_id is None:
+            return "no_tracking"
+            
         run_id = self.start_run(run_name)
         
         try:
@@ -131,7 +158,8 @@ class ExperimentTracker:
                 self.log_schedule(result)
             
             # Log status
-            mlflow.log_param('status', result.get('status', 'unknown'))
+            if MLFLOW_AVAILABLE:
+                mlflow.log_param('status', result.get('status', 'unknown'))
             
         finally:
             self.end_run()

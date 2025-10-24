@@ -12,6 +12,7 @@ try:
     from langchain.llms import OpenAI
     from langchain.chains import RetrievalQA
     from langchain.document_loaders import TextLoader, DirectoryLoader
+    LANGCHAIN_AVAILABLE = True
 except ImportError:
     # Fallback for newer LangChain versions
     try:
@@ -21,10 +22,17 @@ except ImportError:
         from langchain_community.llms import OpenAI
         from langchain.chains import RetrievalQA
         from langchain_community.document_loaders import TextLoader, DirectoryLoader
+        LANGCHAIN_AVAILABLE = True
     except ImportError:
-        # Use sentence transformers as fallback
+        # RAG features not available - will use basic rule-based checking only
+        LANGCHAIN_AVAILABLE = False
         OpenAIEmbeddings = None
-        from sentence_transformers import SentenceTransformer
+        Chroma = None
+        CharacterTextSplitter = None
+        OpenAI = None
+        RetrievalQA = None
+        TextLoader = None
+        DirectoryLoader = None
 
 
 class ComplianceChecker:
@@ -51,6 +59,10 @@ class ComplianceChecker:
     
     def _initialize_vectorstore(self):
         """Load and index labour law documents."""
+        if not LANGCHAIN_AVAILABLE:
+            print("Warning: LangChain not installed. Compliance checking will use basic rule-based validation only.")
+            return
+            
         if not self.use_openai:
             print("Warning: OPENAI_API_KEY not set. Compliance checking will use basic matching.")
             return

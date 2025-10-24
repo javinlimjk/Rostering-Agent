@@ -55,8 +55,9 @@ class ShiftOptimizer:
                     w for w in range(num_workers) 
                     if shift_type in workers[w]['skills']
                 ]
+                # Exactly meet the requirement (not more, not less)
                 self.model.Add(
-                    sum(shifts[(w, d, s)] for w in eligible_workers) >= required
+                    sum(shifts[(w, d, s)] for w in eligible_workers) == required
                 )
         
         # Constraint 2: Each worker works at most one shift per day

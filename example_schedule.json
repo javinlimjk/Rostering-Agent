@@ -1,0 +1,376 @@
+{
+  "status": "optimal",
+  "schedule": [
+    {
+      "day": 0,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 4,
+            "worker_name": "Bob Wilson",
+            "country": "DE"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 5,
+            "worker_name": "Charlie Brown",
+            "country": "JP"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 2,
+            "worker_name": "Jane Smith",
+            "country": "UK"
+          }
+        ]
+      }
+    },
+    {
+      "day": 1,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 1,
+            "worker_name": "John Doe",
+            "country": "US"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 5,
+            "worker_name": "Charlie Brown",
+            "country": "JP"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 4,
+            "worker_name": "Bob Wilson",
+            "country": "DE"
+          }
+        ]
+      }
+    },
+    {
+      "day": 2,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 4,
+            "worker_name": "Bob Wilson",
+            "country": "DE"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 5,
+            "worker_name": "Charlie Brown",
+            "country": "JP"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 2,
+            "worker_name": "Jane Smith",
+            "country": "UK"
+          }
+        ]
+      }
+    },
+    {
+      "day": 3,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 1,
+            "worker_name": "John Doe",
+            "country": "US"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 3,
+            "worker_name": "Alice Johnson",
+            "country": "SG"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 4,
+            "worker_name": "Bob Wilson",
+            "country": "DE"
+          }
+        ]
+      }
+    },
+    {
+      "day": 4,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 5,
+            "worker_name": "Charlie Brown",
+            "country": "JP"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 1,
+            "worker_name": "John Doe",
+            "country": "US"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 4,
+            "worker_name": "Bob Wilson",
+            "country": "DE"
+          }
+        ]
+      }
+    },
+    {
+      "day": 5,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 1,
+            "worker_name": "John Doe",
+            "country": "US"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 2,
+            "worker_name": "Jane Smith",
+            "country": "UK"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 3,
+            "worker_name": "Alice Johnson",
+            "country": "SG"
+          }
+        ]
+      }
+    },
+    {
+      "day": 6,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 3,
+            "worker_name": "Alice Johnson",
+            "country": "SG"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 5,
+            "worker_name": "Charlie Brown",
+            "country": "JP"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 2,
+            "worker_name": "Jane Smith",
+            "country": "UK"
+          }
+        ]
+      }
+    },
+    {
+      "day": 7,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 5,
+            "worker_name": "Charlie Brown",
+            "country": "JP"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 1,
+            "worker_name": "John Doe",
+            "country": "US"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 3,
+            "worker_name": "Alice Johnson",
+            "country": "SG"
+          }
+        ]
+      }
+    },
+    {
+      "day": 8,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 1,
+            "worker_name": "John Doe",
+            "country": "US"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 2,
+            "worker_name": "Jane Smith",
+            "country": "UK"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 3,
+            "worker_name": "Alice Johnson",
+            "country": "SG"
+          }
+        ]
+      }
+    },
+    {
+      "day": 9,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 1,
+            "worker_name": "John Doe",
+            "country": "US"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 5,
+            "worker_name": "Charlie Brown",
+            "country": "JP"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 3,
+            "worker_name": "Alice Johnson",
+            "country": "SG"
+          }
+        ]
+      }
+    },
+    {
+      "day": 10,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 1,
+            "worker_name": "John Doe",
+            "country": "US"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 3,
+            "worker_name": "Alice Johnson",
+            "country": "SG"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 2,
+            "worker_name": "Jane Smith",
+            "country": "UK"
+          }
+        ]
+      }
+    },
+    {
+      "day": 11,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 5,
+            "worker_name": "Charlie Brown",
+            "country": "JP"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 2,
+            "worker_name": "Jane Smith",
+            "country": "UK"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 3,
+            "worker_name": "Alice Johnson",
+            "country": "SG"
+          }
+        ]
+      }
+    },
+    {
+      "day": 12,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 5,
+            "worker_name": "Charlie Brown",
+            "country": "JP"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 1,
+            "worker_name": "John Doe",
+            "country": "US"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 2,
+            "worker_name": "Jane Smith",
+            "country": "UK"
+          }
+        ]
+      }
+    },
+    {
+      "day": 13,
+      "shifts": {
+        "morning": [
+          {
+            "worker_id": 4,
+            "worker_name": "Bob Wilson",
+            "country": "DE"
+          }
+        ],
+        "afternoon": [
+          {
+            "worker_id": 3,
+            "worker_name": "Alice Johnson",
+            "country": "SG"
+          }
+        ],
+        "night": [
+          {
+            "worker_id": 2,
+            "worker_name": "Jane Smith",
+            "country": "UK"
+          }
+        ]
+      }
+    }
+  ],
+  "objective_value": 9.0,
+  "solve_time": 0.014562479000000001,
+  "statistics": {
+    "num_workers": 5,
+    "num_days": 14,
+    "num_shifts": 3
+  }
+}
