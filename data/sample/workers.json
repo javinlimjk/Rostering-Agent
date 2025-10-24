@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "country": "US",
+    "skills": ["morning", "afternoon"],
+    "max_shifts_per_week": 5,
+    "unavailable_days": []
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "country": "UK",
+    "skills": ["afternoon", "night"],
+    "max_shifts_per_week": 5,
+    "unavailable_days": [3, 4]
+  },
+  {
+    "id": 3,
+    "name": "Alice Johnson",
+    "country": "SG",
+    "skills": ["morning", "afternoon", "night"],
+    "max_shifts_per_week": 6,
+    "unavailable_days": []
+  },
+  {
+    "id": 4,
+    "name": "Bob Wilson",
+    "country": "DE",
+    "skills": ["morning", "night"],
+    "max_shifts_per_week": 5,
+    "unavailable_days": [7]
+  },
+  {
+    "id": 5,
+    "name": "Charlie Brown",
+    "country": "JP",
+    "skills": ["morning", "afternoon"],
+    "max_shifts_per_week": 5,
+    "unavailable_days": []
+  }
+]
