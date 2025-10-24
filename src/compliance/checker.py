@@ -265,5 +265,5 @@ class ComplianceChecker:
             full_query = f"For {country}: {query}"
             result = self.qa_chain({"query": full_query})
             return result['result']
-        except Exception as e:
-            return f"Error querying labour laws: {str(e)}"
+        except Exception:
+            return f"Error querying labour laws. Please check the labour law documents for {country}."

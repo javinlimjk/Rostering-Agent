@@ -136,8 +136,8 @@ async def optimize_schedule(request: OptimizationRequest):
             mlflow_run_id=mlflow_run_id
         )
     
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    except Exception:
+        raise HTTPException(status_code=500, detail="Error during schedule optimization")
 
 
 @app.post("/validate", response_model=ValidationResponse)
@@ -171,8 +171,8 @@ async def validate_schedule(request: ValidationRequest):
             compliance_check=compliance_result
         )
     
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    except Exception:
+        raise HTTPException(status_code=500, detail="Error during schedule validation")
 
 
 @app.get("/labour-laws/{country}")
@@ -191,8 +191,8 @@ async def get_labour_law_info(country: str, query: str = "What are the working h
             "query": query,
             "answer": answer
         }
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+    except Exception:
+        raise HTTPException(status_code=500, detail="Error querying labour law information")
 
 
 @app.get("/countries")
@@ -220,10 +220,10 @@ async def get_sample_data():
             "workers": workers,
             "requirements": requirements
         }
-    except Exception as e:
+    except Exception:
         return {
             "error": "Sample data not available",
-            "message": str(e)
+            "message": "Unable to load sample data files"
         }
 
 
